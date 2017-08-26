@@ -29,6 +29,15 @@ body {
   h5 {
     font-size: 4vh;
   }
+
+  p, blockquote {
+    max-width: 60vw;
+    font-size: 5vh;
+  }
+
+  cite {
+    font-size: 2vh;
+  }
 }
 
 .box-center {

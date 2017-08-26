@@ -8,6 +8,8 @@ export class SlideDeckComponent extends PureComponent {
     slides = [
         { exact: true, path: '/', component: slides.TitleSlide },
         { path: '/about-me', component: slides.AboutMeSlide },
+        { path: '/hoc-definition', component: slides.HOCDefinitionSlide },
+        { path: '/thanks', component: slides.PresentationSlide },
     ].map((slide, idx) => ({
         ...slide,
         key: `slide-${idx}`

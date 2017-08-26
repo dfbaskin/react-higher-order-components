@@ -1,0 +1,5 @@
+{
+  "hello": "Hello there!",
+  "dateValue": "Date: {{dateValue, default}}",
+  "amountValue": "Value: {{amountValue, default}}"
+}

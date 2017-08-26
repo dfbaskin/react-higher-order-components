@@ -1,0 +1,11 @@
+{
+  "name": "react-higher-order-components",
+  "version": "1.0.0",
+  "description": "Presentation and source code about React and the use of Higher Order Components.",
+  "keywords": [
+    "React",
+    "Higher Order Components"
+  ],
+  "author": "Dave F. Baskin <dfbaskin@gmail.com>",
+  "license": "MIT"
+}

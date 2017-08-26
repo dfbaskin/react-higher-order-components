@@ -1,0 +1,13 @@
+
+.language-picker {
+    font-size: 1.2rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid gray;
+    background-color: lightblue;
+}
+
+.language-picker label {
+    display: inline-block;
+    margin-left: 2rem;
+}

@@ -1,0 +1,25 @@
+
+.layout {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 80vw;
+    height: 60vh;
+}
+
+.layout > div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    flex: 1;
+    border: 1px solid gray;
+    padding: 1rem;
+    margin: 0;
+}
+
+.layout > div > div {
+    flex: 1;
+    background-color: lightblue;
+    padding: 1rem;
+    margin: 1rem;
+}

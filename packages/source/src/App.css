@@ -1,0 +1,14 @@
+.App {
+    text-align: left;
+}
+
+.App > div:nth-of-type(1) {
+    background-color: #222;
+    padding: 2rem;
+    color: white;
+}
+
+.App > div:nth-of-type(2) {
+    padding: 5rem;
+    font-size: 2rem;
+}

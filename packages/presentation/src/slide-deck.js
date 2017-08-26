@@ -1,15 +1,17 @@
 import React, { PureComponent } from 'react';
 import { Route, withRouter } from 'react-router-dom';
 
-import {TitleSlide} from './slides/title-slide';
-import {AboutMeSlide} from './slides/about-me-slide';
+import * as slides from './slides';
 
 export class SlideDeckComponent extends PureComponent {
 
     slides = [
-        { exact: true, path: '/', component: TitleSlide },
-        { path: '/about-me', component: AboutMeSlide },
-    ];
+        { exact: true, path: '/', component: slides.TitleSlide },
+        { path: '/about-me', component: slides.AboutMeSlide },
+    ].map((slide, idx) => ({
+        ...slide,
+        key: `slide-${idx}`
+    }));
 
     componentDidMount() {
         window.addEventListener('keydown', this.onKeyDown);
@@ -45,23 +47,11 @@ export class SlideDeckComponent extends PureComponent {
     }
 
     render() {
-
-        const slideRoutes = this.slides.map((slideProps, idx) => {
-            const routeProps = {
-                ...slideProps,
-                key: `route-${idx}`
-            };
-            return (
-                <Route {...routeProps} />
-            )
-        });
-
-        const divProps = {
-            className: "slide-deck",
-        };
-
+        const slideRoutes = this.slides.map((routeProps) => (
+            <Route {...routeProps} />
+        ));
         return (
-            <div {...divProps}>
+            <div className="slide-deck">
                 {slideRoutes}
             </div>
         );

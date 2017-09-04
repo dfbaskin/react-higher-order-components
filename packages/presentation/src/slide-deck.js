@@ -10,6 +10,10 @@ export class SlideDeckComponent extends PureComponent {
         { path: '/title', component: slides.TitleSlide },
         { path: '/about-me', component: slides.AboutMeSlide },
         { path: '/hoc-definition', component: slides.HOCDefinitionSlide },
+        { path: '/composition', component: slides.CompositionSlide },
+        { path: '/react-render', component: slides.ReactRenderSlide },
+        { path: '/react-render-class-component', component: slides.ReactRenderClassComponentSlide },
+        { path: '/react-render-functional-component', component: slides.ReactRenderFunctionalComponentSlide },
         { path: '/thanks', component: slides.PresentationSlide },
     ].map((slide, idx) => ({
         ...slide,

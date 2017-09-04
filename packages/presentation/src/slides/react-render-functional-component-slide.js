@@ -1,0 +1,16 @@
+import React, {PureComponent} from "react";
+import {SourceCode} from "../shared/source-code";
+
+const sourceCode = `
+<div style="color: #000000;background-color: #ffffff;font-family: Consolas, 'Courier New', monospace;font-weight: normal;font-size: 14px;line-height: 19px;white-space: pre;"><div><span style="color: #af00db;">import</span><span style="color: #000000;"> </span><span style="color: #001080;">React</span><span style="color: #000000;"> </span><span style="color: #af00db;">from</span><span style="color: #000000;"> </span><span style="color: #a31515;">"react"</span><span style="color: #000000;">;</span></div><br><div><span style="color: #af00db;">export</span><span style="color: #000000;"> </span><span style="color: #0000ff;">function</span><span style="color: #000000;"> </span><span style="color: #795e26;">SimpleFunctionalComponent</span><span style="color: #000000;">(</span><span style="color: #001080;">props</span><span style="color: #000000;">) {</span></div><div><span style="color: #000000;">    </span><span style="color: #0000ff;">const</span><span style="color: #000000;"> {</span><span style="color: #001080;">currentTemp</span><span style="color: #000000;">} </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #001080;">props</span><span style="color: #000000;">;</span></div><div><span style="color: #000000;">    </span><span style="color: #af00db;">return</span><span style="color: #000000;"> (</span></div><div><span style="color: #000000;">        </span><span style="color: #800000;">&lt;article&gt;</span></div><div><span style="color: #000000;">            </span><span style="color: #800000;">&lt;header&gt;</span></div><div><span style="color: #000000;">                </span><span style="color: #800000;">&lt;h1&gt;</span><span style="color: #000000;">Welcome to React</span><span style="color: #800000;">&lt;/h1&gt;</span></div><div><span style="color: #000000;">            </span><span style="color: #800000;">&lt;/header&gt;</span></div><div><span style="color: #000000;">            </span><span style="color: #800000;">&lt;section&gt;</span></div><div><span style="color: #000000;">                </span><span style="color: #800000;">&lt;p&gt;</span><span style="color: #000000;">More about React and Higher-Order Components ...</span><span style="color: #800000;">&lt;/p&gt;</span></div><div><span style="color: #000000;">                </span><span style="color: #800000;">&lt;p&gt;</span><span style="color: #000000;">Current temperature is {</span><span style="color: #001080;">currentTemp</span><span style="color: #000000;">}</span><span style="color: #800000;">&lt;/p&gt;</span></div><div><span style="color: #000000;">            </span><span style="color: #800000;">&lt;/section&gt;</span></div><div><span style="color: #000000;">        </span><span style="color: #800000;">&lt;/article&gt;</span></div><div><span style="color: #000000;">    )</span></div><div><span style="color: #000000;">}</span></div><br></div>
+`;
+
+export class ReactRenderFunctionalComponentSlide extends PureComponent {
+    render() {
+        return (
+            <div>
+                <SourceCode sourceCode={sourceCode} scale={2.0} />
+            </div>
+        )
+    }
+}

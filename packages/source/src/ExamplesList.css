@@ -1,0 +1,9 @@
+
+.examples-list ul {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.examples-list a {
+    text-decoration: none;
+}

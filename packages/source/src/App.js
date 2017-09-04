@@ -1,28 +1,42 @@
 import React from 'react';
+import {BrowserRouter as Router} from 'react-router-dom'
+import {Layout} from './Layout';
 import './App.css';
 
 import * as examples from './components';
 
+const routes = [
+    {
+        path: "/simple",
+        component: examples.Simple,
+        desc: "Simple"
+    },
+    {
+        path: "/simple-stateless",
+        component: examples.SimpleStatelessParent,
+        desc: "Simple Stateless"
+    },
+    {
+        path: "/fixed-layout",
+        component: examples.FixedLayout,
+        desc: "Fixed Layout"
+    },
+    {
+        path: "/composed-layout",
+        component: examples.ComposedLayoutParent,
+        desc: "Composed Layout"
+    },
+    {
+        path: "/i18n",
+        component: examples.InternationalizationProvider,
+        desc: "i18n"
+    },
+];
+
 export const App = (props) => {
     return (
-        <div className="App">
-            <div>
-                <h2>React Higher Order Functions</h2>
-            </div>
-            <div>
-                <examples.InternationalizationProvider />
-            </div>
-        </div>
+        <Router>
+            <Layout routes={routes} />
+        </Router>
     );
 };
-
-
-/* Examples
-
- <examples.Simple />
- <examples.SimpleStatelessParent />
- <examples.FixedLayout />
- <examples.ComposedLayoutParent />
- <examples.InternationalizationProvider />
-
- */

@@ -1,0 +1,17 @@
+.examples-layout {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+.examples-layout > div:nth-of-type(1) {
+  flex: 0 0 auto;
+  background: linear-gradient(90deg, #ccc, #eee);
+  padding: 1rem;
+  border-right: 2px solid #ccc;
+}
+
+.examples-layout > div:nth-of-type(2) {
+  flex: 1;
+  padding: 1rem;
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router} from 'react-router-dom'
-import {Layout} from './Layout';
-import './App.css';
+import {Layout} from './layout';
+import './app.css';
 
 import * as examples from './components';
 

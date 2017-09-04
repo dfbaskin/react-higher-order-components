@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {Link} from 'react-router-dom'
-import "./ExamplesList.css";
+import "./examples-list.css";
 
 export class ExamplesList extends Component {
     render() {

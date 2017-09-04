@@ -1,7 +1,7 @@
 import React, {Component} from "react";
-import {ExamplesList} from "./ExamplesList";
-import {RoutesList} from "./RoutesList";
-import "./Layouts.css";
+import {ExamplesList} from "./examples-list";
+import {RoutesList} from "./routes-list";
+import "./layouts.css";
 
 export class Layout extends Component {
     render() {

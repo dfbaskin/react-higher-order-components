@@ -7,3 +7,5 @@ export {CompositionSlide} from './composition-slide';
 export {ReactRenderSlide} from './react-render-slide';
 export {ReactRenderClassComponentSlide} from './react-render-class-component-slide';
 export {ReactRenderFunctionalComponentSlide} from './react-render-functional-component-slide';
+export {ReactStatefulComponentSlide} from './react-stateful-component-slide';
+export {ReactDelegatedStatefulComponentSlide} from './react-delegated-stateful-component-slide';

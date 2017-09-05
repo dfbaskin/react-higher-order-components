@@ -14,6 +14,8 @@ export class SlideDeckComponent extends PureComponent {
         { path: '/react-render', component: slides.ReactRenderSlide },
         { path: '/react-render-class-component', component: slides.ReactRenderClassComponentSlide },
         { path: '/react-render-functional-component', component: slides.ReactRenderFunctionalComponentSlide },
+        { path: '/react-stateful-component', component: slides.ReactStatefulComponentSlide },
+        { path: '/react-delegated-stateful-component', component: slides.ReactDelegatedStatefulComponentSlide },
         { path: '/thanks', component: slides.PresentationSlide },
     ].map((slide, idx) => ({
         ...slide,

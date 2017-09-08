@@ -42,6 +42,11 @@ const routes = [
         desc: "Composed Layout"
     },
     {
+        path: "/composed-functions-layout",
+        component: examples.ComposedFunctionsLayoutParent,
+        desc: "Composed Layout w/Functions"
+    },
+    {
         path: "/i18n",
         component: examples.InternationalizationProvider,
         desc: "i18n"

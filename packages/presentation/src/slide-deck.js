@@ -20,6 +20,9 @@ export class SlideDeckComponent extends PureComponent {
         { path: '/array-props', component: slides.ArrayPropsSlide },
         { path: '/object-props', component: slides.ObjectPropsSlide },
         { path: '/function-props', component: slides.ReactDelegatedStatefulComponentSlide },
+        { path: '/fixed-layout', component: slides.FixedLayoutSlide },
+        { path: '/composed-layout', component: slides.ComposedLayoutSlide },
+        { path: '/composed-functions-layout', component: slides.ComposedFunctionsLayoutSlide },
         { path: '/thanks', component: slides.PresentationSlide },
     ].map((slide, idx) => ({
         ...slide,

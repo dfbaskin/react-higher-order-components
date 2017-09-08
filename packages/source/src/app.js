@@ -47,6 +47,16 @@ const routes = [
         desc: "Composed Layout w/Functions"
     },
     {
+        path: "/fixed-test-pattern",
+        component: examples.FixedTestPattern,
+        desc: "Fixed Test Pattern"
+    },
+    {
+        path: "/dynamic-test-pattern",
+        component: examples.DynamicTestPatternParent,
+        desc: "Dynamic Test Pattern"
+    },
+    {
         path: "/i18n",
         component: examples.InternationalizationProvider,
         desc: "i18n"

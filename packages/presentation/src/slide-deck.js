@@ -23,6 +23,8 @@ export class SlideDeckComponent extends PureComponent {
         { path: '/fixed-layout', component: slides.FixedLayoutSlide },
         { path: '/composed-layout', component: slides.ComposedLayoutSlide },
         { path: '/composed-functions-layout', component: slides.ComposedFunctionsLayoutSlide },
+        { path: '/fixed-test-pattern', component: slides.FixedTestPatternSlide },
+        { path: '/dynamic-test-pattern', component: slides.DynamicTestPatternSlide },
         { path: '/thanks', component: slides.PresentationSlide },
     ].map((slide, idx) => ({
         ...slide,

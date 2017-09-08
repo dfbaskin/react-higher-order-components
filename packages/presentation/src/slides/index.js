@@ -15,3 +15,5 @@ export {ObjectPropsSlide} from './object-props-slide';
 export {FixedLayoutSlide} from './fixed-layout-slide';
 export {ComposedLayoutSlide} from './composed-layout-slide';
 export {ComposedFunctionsLayoutSlide} from './composed-functions-layout-slide';
+export {FixedTestPatternSlide} from './fixed-test-pattern-slide';
+export {DynamicTestPatternSlide} from './dynamic-test-pattern-slide';

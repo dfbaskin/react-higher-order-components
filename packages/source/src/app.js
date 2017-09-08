@@ -17,6 +17,21 @@ const routes = [
         desc: "Simple Stateless"
     },
     {
+        path: "/value-props",
+        component: examples.ValuePropsParent,
+        desc: "Value Props"
+    },
+    {
+        path: "/array-props",
+        component: examples.ArrayPropsParent,
+        desc: "Array Props"
+    },
+    {
+        path: "/object-props",
+        component: examples.ObjectPropsParent,
+        desc: "Object Props"
+    },
+    {
         path: "/fixed-layout",
         component: examples.FixedLayout,
         desc: "Fixed Layout"

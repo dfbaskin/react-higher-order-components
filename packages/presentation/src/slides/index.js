@@ -9,3 +9,6 @@ export {ReactRenderClassComponentSlide} from './react-render-class-component-sli
 export {ReactRenderFunctionalComponentSlide} from './react-render-functional-component-slide';
 export {ReactStatefulComponentSlide} from './react-stateful-component-slide';
 export {ReactDelegatedStatefulComponentSlide} from './react-delegated-stateful-component-slide';
+export {ValuePropsSlide} from './value-props-slide';
+export {ArrayPropsSlide} from './array-props-slide';
+export {ObjectPropsSlide} from './object-props-slide';

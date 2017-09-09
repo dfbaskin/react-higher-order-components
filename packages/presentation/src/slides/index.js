@@ -17,3 +17,7 @@ export {ComposedLayoutSlide} from './composed-layout-slide';
 export {ComposedFunctionsLayoutSlide} from './composed-functions-layout-slide';
 export {FixedTestPatternSlide} from './fixed-test-pattern-slide';
 export {DynamicTestPatternSlide} from './dynamic-test-pattern-slide';
+export {HocTitleSlide} from './hoc-title-slide';
+export {SimpleHocSlide} from './simple-hoc-slide';
+export {WrappedWithHocSlide} from './wrapped-with-hoc-slide';
+export {ReactHocDocsSlide} from './react-hoc-docs-slide';

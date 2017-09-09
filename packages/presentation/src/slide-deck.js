@@ -25,6 +25,10 @@ export class SlideDeckComponent extends PureComponent {
         { path: '/composed-functions-layout', component: slides.ComposedFunctionsLayoutSlide },
         { path: '/fixed-test-pattern', component: slides.FixedTestPatternSlide },
         { path: '/dynamic-test-pattern', component: slides.DynamicTestPatternSlide },
+        { path: '/hoc', component: slides.HocTitleSlide },
+        { path: '/simple-hoc', component: slides.SimpleHocSlide },
+        { path: '/wrapped-with-hoc', component: slides.WrappedWithHocSlide },
+        { path: '/react-hoc-docs', component: slides.ReactHocDocsSlide },
         { path: '/thanks', component: slides.PresentationSlide },
     ].map((slide, idx) => ({
         ...slide,

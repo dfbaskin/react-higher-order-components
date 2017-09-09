@@ -20,4 +20,6 @@ export {DynamicTestPatternSlide} from './dynamic-test-pattern-slide';
 export {HocTitleSlide} from './hoc-title-slide';
 export {SimpleHocSlide} from './simple-hoc-slide';
 export {WrappedWithHocSlide} from './wrapped-with-hoc-slide';
+export {TestPatternHocSlide} from './test-pattern-hoc-slide';
+export {TestPatternHocUsageSlide} from './test-pattern-hoc-usage-slide';
 export {ReactHocDocsSlide} from './react-hoc-docs-slide';

@@ -12,4 +12,5 @@ export {ComposedFunctionsLayoutParent} from './composition/composed-functions-la
 export {FixedTestPattern} from './composition/fixed-test-pattern';
 export {DynamicTestPatternParent} from './composition/dynamic-test-pattern-parent';
 export {SimpleHocList} from './higher-order-components/simple-hoc-list';
+export {DynamicTestPatternComposed} from './higher-order-components/dynamic-test-pattern-hoc-parent';
 export {InternationalizationProvider} from './i18next/i18next-provider';

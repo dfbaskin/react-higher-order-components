@@ -28,6 +28,8 @@ export class SlideDeckComponent extends PureComponent {
         { path: '/hoc', component: slides.HocTitleSlide },
         { path: '/simple-hoc', component: slides.SimpleHocSlide },
         { path: '/wrapped-with-hoc', component: slides.WrappedWithHocSlide },
+        { path: '/test-pattern-hoc', component: slides.TestPatternHocSlide },
+        { path: '/test-pattern-hoc-usage', component: slides.TestPatternHocUsageSlide },
         { path: '/react-hoc-docs', component: slides.ReactHocDocsSlide },
         { path: '/thanks', component: slides.PresentationSlide },
     ].map((slide, idx) => ({

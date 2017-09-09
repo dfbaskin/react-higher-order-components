@@ -62,6 +62,11 @@ const routes = [
         desc: "Simple Higher-Order Component"
     },
     {
+        path: "/test-pattern-hoc",
+        component: examples.DynamicTestPatternComposed,
+        desc: "Test Pattern HOC"
+    },
+    {
         path: "/i18n",
         component: examples.InternationalizationProvider,
         desc: "i18n"

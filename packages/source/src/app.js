@@ -57,6 +57,11 @@ const routes = [
         desc: "Dynamic Test Pattern"
     },
     {
+        path: "/simple-hoc",
+        component: examples.SimpleHocList,
+        desc: "Simple Higher-Order Component"
+    },
+    {
         path: "/i18n",
         component: examples.InternationalizationProvider,
         desc: "i18n"

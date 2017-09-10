@@ -1,5 +1,4 @@
 import React, {PureComponent} from "react";
-import {TestPattern} from "./test-pattern";
 
 const colors = [
     'red',

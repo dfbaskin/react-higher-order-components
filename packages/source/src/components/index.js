@@ -14,3 +14,4 @@ export {DynamicTestPatternParent} from './composition/dynamic-test-pattern-paren
 export {SimpleHocList} from './higher-order-components/simple-hoc-list';
 export {DynamicTestPatternComposed} from './higher-order-components/dynamic-test-pattern-hoc-parent';
 export {InternationalizationProvider} from './i18next/i18next-provider';
+export {PantryApp} from './pantry/pantry-app';

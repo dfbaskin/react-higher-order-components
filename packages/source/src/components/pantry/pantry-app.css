@@ -1,0 +1,67 @@
+.pantry-app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.pantry-app > div {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+.pantry-app > div > div {
+    flex: 1;
+    margin: 2rem;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    background: linear-gradient(1800deg, #ddd, #eee);
+}
+
+.pantry-app > div > div h1 {
+    font-size: 1.5rem;
+}
+
+.pantry-app button {
+    margin-right: 1rem;
+}
+
+.pantry-app ul {
+    list-style: none;
+}
+
+.pantry-app ul li span {
+    margin-right: 1rem;
+}
+
+.pantry-app .grocery-list table {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.pantry-app .grocery-list table tr th {
+    padding: 0.1rem;
+}
+.pantry-app .grocery-list table tr td {
+    padding: 0.1rem;
+}
+.pantry-app .grocery-list table tr th:nth-of-type(1) {
+    text-align: left;
+    width: 35%;
+}
+.pantry-app .grocery-list table tr th:nth-of-type(2) {
+    text-align: right;
+    width: 30%;
+}
+.pantry-app .grocery-list table tr th:nth-of-type(3) {
+    text-align: right;
+    width: 35%;
+}
+.pantry-app .grocery-list table tr td:nth-of-type(1) {
+    text-align: left;
+}
+.pantry-app .grocery-list table tr td:nth-of-type(2) {
+    text-align: right;
+}
+.pantry-app .grocery-list table tr td:nth-of-type(3) {
+    text-align: right;
+}

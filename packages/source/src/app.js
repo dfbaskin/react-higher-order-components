@@ -71,6 +71,11 @@ const routes = [
         component: examples.InternationalizationProvider,
         desc: "i18n"
     },
+    {
+        path: "/pantry-app",
+        component: examples.PantryApp,
+        desc: "Pantry App"
+    },
 ];
 
 export const App = (props) => {

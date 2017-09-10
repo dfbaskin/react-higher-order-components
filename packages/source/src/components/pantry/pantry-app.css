@@ -65,3 +65,12 @@
 .pantry-app .grocery-list table tr td:nth-of-type(3) {
     text-align: right;
 }
+
+.pantry-app .pantry-account table {
+    width: 100%;
+}
+.pantry-app .pantry-account table tr th,
+.pantry-app .pantry-account table tr td {
+    width: 33%;
+    text-align: right;
+}

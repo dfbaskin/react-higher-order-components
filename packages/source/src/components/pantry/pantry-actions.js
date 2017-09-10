@@ -146,3 +146,17 @@ export const currentGroceryListSelector = createSelector(
         };
     }
 );
+
+export const currentPantryInventorySelector = createSelector(
+    currentPantryState,
+    ({pantry}) => ({
+        pantry
+    })
+);
+
+export const currentPantryAccountSelector = createSelector(
+    currentPantryState,
+    ({account}) => ({
+        account
+    })
+);

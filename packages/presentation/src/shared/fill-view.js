@@ -15,10 +15,12 @@ export class FillView extends PureComponent {
     };
 
     componentDidMount() {
+        const {percentMargin = 6} = this.props;
+        const adjust = (100 - percentMargin) * 0.01;
         const {width: contentWidth, height: contentHeight} = this.divRef.getBoundingClientRect();
         const {width: parentWidth, height: parentHeight} = this.divRef.parentNode.parentNode.getBoundingClientRect();
-        const availableWidth = parentWidth * 0.95;
-        const availableHeight = parentHeight * 0.95;
+        const availableWidth = parentWidth * adjust;
+        const availableHeight = parentHeight * adjust;
         const scale = Math.min(availableWidth / contentWidth, availableHeight / contentHeight);
         this.setState(() => ({ scale }));
     }

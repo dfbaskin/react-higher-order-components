@@ -1,16 +1,28 @@
 import React, {PureComponent} from "react";
-import {SourceCode} from "../shared/source-code";
+import {FillView} from "../shared/fill-view";
+import {CodeView} from "../shared/code-view";
 
 const sourceCode = `
-<div style="color: #000000;background-color: #ffffff;font-family: Consolas, 'Courier New', monospace;font-weight: normal;font-size: 14px;line-height: 19px;white-space: pre;"><div><span style="color: #af00db;">export</span><span style="color: #000000;"> </span><span style="color: #0000ff;">const</span><span style="color: #000000;"> </span><span style="color: #795e26;">MyComponent</span><span style="color: #000000;"> </span><span style="color: #000000;">=</span><span style="color: #000000;"> (</span><span style="color: #001080;">props</span><span style="color: #000000;">) </span><span style="color: #0000ff;">=&gt;</span><span style="color: #000000;"> {</span></div><div><span style="color: #000000;">    </span><span style="color: #0000ff;">const</span><span style="color: #000000;"> {</span><span style="color: #001080;">message</span><span style="color: #000000;"> </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #a31515;">"Unwrapped Component"</span><span style="color: #000000;">} </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #001080;">props</span><span style="color: #000000;">;</span></div><div><span style="color: #000000;">    </span><span style="color: #af00db;">return</span><span style="color: #000000;"> (</span></div><div><span style="color: #000000;">        </span><span style="color: #800000;">&lt;div&gt;</span><span style="color: #000000;">[ {</span><span style="color: #001080;">message</span><span style="color: #000000;">} ]</span><span style="color: #800000;">&lt;/div&gt;</span></div><div><span style="color: #000000;">    )</span></div><div><span style="color: #000000;">};</span></div><br><div><span style="color: #af00db;">export</span><span style="color: #000000;"> </span><span style="color: #0000ff;">const</span><span style="color: #000000;"> </span><span style="color: #001080;">DirectlyWrapped</span><span style="color: #000000;"> </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #795e26;">simpleHoc</span><span style="color: #000000;">()(</span><span style="color: #001080;">MyComponent</span><span style="color: #000000;">);</span></div><br><div><span style="color: #af00db;">export</span><span style="color: #000000;"> </span><span style="color: #0000ff;">const</span><span style="color: #000000;"> </span><span style="color: #001080;">ComposedWrapped</span><span style="color: #000000;"> </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #795e26;">compose</span><span style="color: #000000;">(</span></div><div><span style="color: #000000;">    </span><span style="color: #795e26;">simpleHoc</span><span style="color: #000000;">()</span></div><div><span style="color: #000000;">)(</span><span style="color: #001080;">MyComponent</span><span style="color: #000000;">);</span></div><br></div>
+export const MyComponent = (props) => {
+    const {message = "Unwrapped Component"} = props;
+    return (
+        <div>[ {message} ]</div>
+    )
+};
+
+export const DirectlyWrapped = simpleHoc()(MyComponent);
+
+export const ComposedWrapped = compose(
+    simpleHoc()
+)(MyComponent);
 `;
 
 export class WrappedWithHocSlide extends PureComponent {
     render() {
         return (
-            <div>
-                <SourceCode sourceCode={sourceCode} scale={2.0} />
-            </div>
+            <FillView>
+                <CodeView sourceCode={sourceCode} language="javascript" />
+            </FillView>
         )
     }
 }

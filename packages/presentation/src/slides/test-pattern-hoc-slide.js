@@ -1,16 +1,46 @@
 import React, {PureComponent} from "react";
-import {SourceCode} from "../shared/source-code";
+import {FillView} from "../shared/fill-view";
+import {CodeView} from "../shared/code-view";
 
 const sourceCode = `
-<div style="color: #000000;background-color: #ffffff;font-family: Consolas, 'Courier New', monospace;font-weight: normal;font-size: 14px;line-height: 19px;white-space: pre;"><div><span style="color: #af00db;">export</span><span style="color: #000000;"> </span><span style="color: #0000ff;">const</span><span style="color: #000000;"> </span><span style="color: #795e26;">dynamicTestPatternHoc</span><span style="color: #000000;"> </span><span style="color: #000000;">=</span><span style="color: #000000;"> (</span><span style="color: #001080;">options</span><span style="color: #000000;"> </span><span style="color: #000000;">=</span><span style="color: #000000;"> {}) </span><span style="color: #0000ff;">=&gt;</span><span style="color: #000000;"> {</span></div><div><span style="color: #000000;">    </span><span style="color: #0000ff;">const</span><span style="color: #000000;"> {</span><span style="color: #001080;">colors</span><span style="color: #000000;"> </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #001080;">defaultColors</span><span style="color: #000000;">} </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #001080;">options</span><span style="color: #000000;">;</span></div><div><span style="color: #000000;">    </span><span style="color: #af00db;">return</span><span style="color: #000000;"> (</span><span style="color: #001080;">WrappedComponent</span><span style="color: #000000;">) </span><span style="color: #0000ff;">=&gt;</span></div><div><span style="color: #000000;">        </span><span style="color: #0000ff;">class</span><span style="color: #000000;"> </span><span style="color: #0000ff;">extends</span><span style="color: #000000;"> </span><span style="color: #267f99;">PureComponent</span><span style="color: #000000;"> {</span></div><br><div><span style="color: #000000;">            </span><span style="color: #001080;">state</span><span style="color: #000000;"> </span><span style="color: #000000;">=</span><span style="color: #000000;"> {</span></div><div><span style="color: #000000;">                </span><span style="color: #001080;">color:</span><span style="color: #000000;"> </span><span style="color: #001080;">colors</span><span style="color: #000000;">[</span><span style="color: #09885a;">0</span><span style="color: #000000;">],</span></div><div><span style="color: #000000;">                </span><span style="color: #001080;">width:</span><span style="color: #000000;"> </span><span style="color: #09885a;">50</span><span style="color: #000000;">,</span></div><div><span style="color: #000000;">                </span><span style="color: #001080;">height:</span><span style="color: #000000;"> </span><span style="color: #09885a;">60</span></div><div><span style="color: #000000;">            };</span></div><br><div><span style="color: #000000;">            </span><span style="color: #795e26;">randomizePattern</span><span style="color: #000000;"> </span><span style="color: #000000;">=</span><span style="color: #000000;"> () </span><span style="color: #0000ff;">=&gt;</span><span style="color: #000000;"> {</span></div><div><span style="color: #000000;">                </span><span style="color: #0000ff;">this</span><span style="color: #000000;">.</span><span style="color: #795e26;">setState</span><span style="color: #000000;">(() </span><span style="color: #0000ff;">=&gt;</span><span style="color: #000000;"> ({</span></div><div><span style="color: #000000;">                    </span><span style="color: #001080;">color:</span><span style="color: #000000;"> </span><span style="color: #001080;">colors</span><span style="color: #000000;">[</span><span style="color: #267f99;">Math</span><span style="color: #000000;">.</span><span style="color: #795e26;">floor</span><span style="color: #000000;">(</span><span style="color: #267f99;">Math</span><span style="color: #000000;">.</span><span style="color: #795e26;">random</span><span style="color: #000000;">() </span><span style="color: #000000;">*</span><span style="color: #000000;"> </span><span style="color: #001080;">colors</span><span style="color: #000000;">.</span><span style="color: #001080;">length</span><span style="color: #000000;">)],</span></div><div><span style="color: #000000;">                    </span><span style="color: #001080;">width:</span><span style="color: #000000;"> </span><span style="color: #267f99;">Math</span><span style="color: #000000;">.</span><span style="color: #795e26;">floor</span><span style="color: #000000;">(</span><span style="color: #267f99;">Math</span><span style="color: #000000;">.</span><span style="color: #795e26;">random</span><span style="color: #000000;">() </span><span style="color: #000000;">*</span><span style="color: #000000;"> </span><span style="color: #09885a;">50</span><span style="color: #000000;">) </span><span style="color: #000000;">+</span><span style="color: #000000;"> </span><span style="color: #09885a;">25</span><span style="color: #000000;">,</span></div><div><span style="color: #000000;">                    </span><span style="color: #001080;">height:</span><span style="color: #000000;"> </span><span style="color: #267f99;">Math</span><span style="color: #000000;">.</span><span style="color: #795e26;">floor</span><span style="color: #000000;">(</span><span style="color: #267f99;">Math</span><span style="color: #000000;">.</span><span style="color: #795e26;">random</span><span style="color: #000000;">() </span><span style="color: #000000;">*</span><span style="color: #000000;"> </span><span style="color: #09885a;">50</span><span style="color: #000000;">) </span><span style="color: #000000;">+</span><span style="color: #000000;"> </span><span style="color: #09885a;">25</span><span style="color: #000000;">,</span></div><div><span style="color: #000000;">                }));</span></div><div><span style="color: #000000;">            };</span></div><br><div><span style="color: #000000;">            </span><span style="color: #795e26;">render</span><span style="color: #000000;">() {</span></div><div><span style="color: #000000;">                </span><span style="color: #0000ff;">const</span><span style="color: #000000;"> {</span><span style="color: #001080;">color</span><span style="color: #000000;">, </span><span style="color: #001080;">width</span><span style="color: #000000;">, </span><span style="color: #001080;">height</span><span style="color: #000000;">} </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000ff;">this</span><span style="color: #000000;">.</span><span style="color: #001080;">state</span><span style="color: #000000;">;</span></div><div><span style="color: #000000;">                </span><span style="color: #0000ff;">const</span><span style="color: #000000;"> </span><span style="color: #001080;">componentProps</span><span style="color: #000000;"> </span><span style="color: #000000;">=</span><span style="color: #000000;"> {</span><span style="color: #001080;">color</span><span style="color: #000000;">, </span><span style="color: #001080;">width</span><span style="color: #000000;">, </span><span style="color: #001080;">height</span><span style="color: #000000;">};</span></div><div><span style="color: #000000;">                </span><span style="color: #af00db;">return</span><span style="color: #000000;"> (</span></div><div><span style="color: #000000;">                    </span><span style="color: #800000;">&lt;div</span><span style="color: #000000;"> </span><span style="color: #ff0000;">onClick</span><span style="color: #000000;">=</span><span style="color: #000000;">{</span><span style="color: #0000ff;">this</span><span style="color: #000000;">.</span><span style="color: #001080;">randomizePattern</span><span style="color: #000000;">}</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #000000;">                        </span><span style="color: #800000;">&lt;</span><span style="color: #267f99;">WrappedComponent</span><span style="color: #000000;"> {</span><span style="color: #000000;">...</span><span style="color: #001080;">componentProps</span><span style="color: #000000;">} </span><span style="color: #800000;">/&gt;</span></div><div><span style="color: #000000;">                    </span><span style="color: #800000;">&lt;/div&gt;</span></div><div><span style="color: #000000;">                )</span></div><div><span style="color: #000000;">            }</span></div><div><span style="color: #000000;">        };</span></div><div><span style="color: #000000;">};</span></div><br></div>
+export const dynamicTestPatternHoc = (options = {}) => {
+    const {colors = defaultColors} = options;
+    return (WrappedComponent) =>
+        class extends PureComponent {
+
+            state = {
+                color: colors[0],
+                width: 50,
+                height: 60
+            };
+
+            randomizePattern = () => {
+                this.setState(() => ({
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    width: Math.floor(Math.random() * 50) + 25,
+                    height: Math.floor(Math.random() * 50) + 25,
+                }));
+            };
+
+            render() {
+                const {color, width, height} = this.state;
+                const componentProps = {color, width, height};
+                return (
+                    <div onClick={this.randomizePattern}>
+                        <WrappedComponent {...componentProps} />
+                    </div>
+                )
+            }
+        };
+};
 `;
 
 export class TestPatternHocSlide extends PureComponent {
     render() {
         return (
-            <div>
-                <SourceCode sourceCode={sourceCode} scale={1.4} />
-            </div>
+            <FillView>
+                <CodeView sourceCode={sourceCode} language="javascript" />
+            </FillView>
         )
     }
 }

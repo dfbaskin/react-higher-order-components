@@ -46,6 +46,10 @@ export class SlideDeckComponent extends PureComponent {
         { path: '/redux-map-state-to-props', component: slides.ReduxMapStateToPropsSlide },
         { path: '/redux-map-dispatch-to-props', component: slides.ReduxMapDispatchToPropsSlide },
         { path: '/redux-multiple-actions', component: slides.ReduxMultipleActionsSlide },
+        { path: '/other-tools', component: slides.OtherToolsTitleSlide },
+        { path: '/redux-form', component: slides.ReduxFormTitleSlide },
+        { path: '/redux-form-hoc', component: slides.ReduxFormHocSlide },
+        { path: '/recompose', component: slides.RecomposeTitleSlide },
         { path: '/react-hoc-docs', component: slides.ReactHocDocsSlide },
         { path: '/thanks', component: slides.PresentationSlide },
     ].map((slide, idx) => ({

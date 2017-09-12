@@ -38,4 +38,8 @@ export {ReduxConnectTitleSlide} from './redux-connect-title-slide';
 export {ReduxMapStateToPropsSlide} from './redux-map-state-to-props-slide';
 export {ReduxMapDispatchToPropsSlide} from './redux-map-dispatch-to-props-slide';
 export {ReduxMultipleActionsSlide} from './redux-multiple-actions-slide';
+export {OtherToolsTitleSlide} from './other-tools-slide';
+export {ReduxFormTitleSlide} from './redux-form-title-slide';
+export {ReduxFormHocSlide} from './redux-form-hoc-slide';
+export {RecomposeTitleSlide} from './recompose-title-slide';
 export {ReactHocDocsSlide} from './react-hoc-docs-slide';

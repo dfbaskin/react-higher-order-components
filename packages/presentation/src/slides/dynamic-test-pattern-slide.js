@@ -1,22 +1,68 @@
 import React, {PureComponent} from "react";
-import {SideBySideSourceCode} from "../shared/side-by-side-source-code";
+import {FillView} from "../shared/fill-view";
+import {TwoPanel} from "../shared/two-panel";
+import {CodeView} from "../shared/code-view";
 
 const sourceCodeOne = `
-<div style="color: #000000;background-color: #ffffff;font-family: Consolas, 'Courier New', monospace;font-weight: normal;font-size: 14px;line-height: 19px;white-space: pre;"><div><span style="color: #af00db;">export</span><span style="color: #000000;"> </span><span style="color: #0000ff;">class</span><span style="color: #000000;"> </span><span style="color: #267f99;">DynamicTestPatternParent</span><span style="color: #000000;"> </span><span style="color: #0000ff;">extends</span><span style="color: #000000;"> </span><span style="color: #267f99;">PureComponent</span><span style="color: #000000;"> {</span></div><div><span style="color: #000000;">    </span><span style="color: #795e26;">render</span><span style="color: #000000;">() {</span></div><div><span style="color: #000000;">        </span><span style="color: #af00db;">return</span><span style="color: #000000;"> (</span></div><div><span style="color: #000000;">            </span><span style="color: #800000;">&lt;</span><span style="color: #267f99;">DynamicTestPattern</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #000000;">                {({</span><span style="color: #001080;">color</span><span style="color: #000000;">, </span><span style="color: #001080;">width</span><span style="color: #000000;">, </span><span style="color: #001080;">height</span><span style="color: #000000;">}) </span><span style="color: #0000ff;">=&gt;</span><span style="color: #000000;"> {</span></div><div><span style="color: #000000;">                    </span><span style="color: #0000ff;">const</span><span style="color: #000000;"> </span><span style="color: #001080;">testPatternProps</span><span style="color: #000000;"> </span><span style="color: #000000;">=</span><span style="color: #000000;"> {</span></div><div><span style="color: #000000;">                        </span><span style="color: #001080;">color</span><span style="color: #000000;">,</span></div><div><span style="color: #000000;">                        </span><span style="color: #001080;">width:</span><span style="color: #000000;"> </span><span style="color: #001080;">width</span><span style="color: #000000;"> </span><span style="color: #000000;">+</span><span style="color: #000000;"> </span><span style="color: #a31515;">"vw"</span><span style="color: #000000;">,</span></div><div><span style="color: #000000;">                        </span><span style="color: #001080;">height:</span><span style="color: #000000;"> </span><span style="color: #001080;">height</span><span style="color: #000000;"> </span><span style="color: #000000;">+</span><span style="color: #000000;"> </span><span style="color: #a31515;">"vh"</span></div><div><span style="color: #000000;">                    };</span></div><div><span style="color: #000000;">                    </span><span style="color: #af00db;">return</span><span style="color: #000000;"> (</span></div><div><span style="color: #000000;">                        </span><span style="color: #800000;">&lt;</span><span style="color: #267f99;">TestPattern</span><span style="color: #000000;"> {</span><span style="color: #000000;">...</span><span style="color: #001080;">testPatternProps</span><span style="color: #000000;">} </span><span style="color: #800000;">/&gt;</span></div><div><span style="color: #000000;">                    )</span></div><div><span style="color: #000000;">                }}</span></div><div><span style="color: #000000;">            </span><span style="color: #800000;">&lt;/</span><span style="color: #267f99;">DynamicTestPattern</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #000000;">        )</span></div><div><span style="color: #000000;">    }</span></div><div><span style="color: #000000;">}</span></div><br></div>
+export class DynamicTestPatternParent extends PureComponent {
+    render() {
+        return (
+            <DynamicTestPattern>
+                {({color, width, height}) => {
+                    const testPatternProps = {
+                        color,
+                        width: width + "vw",
+                        height: height + "vh"
+                    };
+                    return (
+                        <TestPattern {...testPatternProps} />
+                    )
+                }}
+            </DynamicTestPattern>
+        )
+    }
+}
 `;
 
 const sourceCodeTwo = `
-<div style="color: #000000;background-color: #ffffff;font-family: Consolas, 'Courier New', monospace;font-weight: normal;font-size: 14px;line-height: 19px;white-space: pre;"><div><span style="color: #af00db;">export</span><span style="color: #000000;"> </span><span style="color: #0000ff;">class</span><span style="color: #000000;"> </span><span style="color: #267f99;">DynamicTestPattern</span><span style="color: #000000;"> </span><span style="color: #0000ff;">extends</span><span style="color: #000000;"> </span><span style="color: #267f99;">PureComponent</span><span style="color: #000000;"> {</span></div><br><div><span style="color: #000000;">    </span><span style="color: #001080;">state</span><span style="color: #000000;"> </span><span style="color: #000000;">=</span><span style="color: #000000;"> {</span></div><div><span style="color: #000000;">        </span><span style="color: #001080;">color:</span><span style="color: #000000;"> </span><span style="color: #001080;">colors</span><span style="color: #000000;">[</span><span style="color: #09885a;">0</span><span style="color: #000000;">],</span></div><div><span style="color: #000000;">        </span><span style="color: #001080;">width:</span><span style="color: #000000;"> </span><span style="color: #09885a;">50</span><span style="color: #000000;">,</span></div><div><span style="color: #000000;">        </span><span style="color: #001080;">height:</span><span style="color: #000000;"> </span><span style="color: #09885a;">60</span></div><div><span style="color: #000000;">    };</span></div><br><div><span style="color: #000000;">    </span><span style="color: #795e26;">randomizePattern</span><span style="color: #000000;"> </span><span style="color: #000000;">=</span><span style="color: #000000;"> () </span><span style="color: #0000ff;">=&gt;</span><span style="color: #000000;"> {</span></div><div><span style="color: #000000;">        </span><span style="color: #0000ff;">this</span><span style="color: #000000;">.</span><span style="color: #795e26;">setState</span><span style="color: #000000;">(() </span><span style="color: #0000ff;">=&gt;</span><span style="color: #000000;"> ({</span></div><div><span style="color: #000000;">            </span><span style="color: #001080;">color:</span><span style="color: #000000;"> </span><span style="color: #001080;">colors</span><span style="color: #000000;">[</span><span style="color: #267f99;">Math</span><span style="color: #000000;">.</span><span style="color: #795e26;">floor</span><span style="color: #000000;">(</span><span style="color: #267f99;">Math</span><span style="color: #000000;">.</span><span style="color: #795e26;">random</span><span style="color: #000000;">() </span><span style="color: #000000;">*</span><span style="color: #000000;"> </span><span style="color: #001080;">colors</span><span style="color: #000000;">.</span><span style="color: #001080;">length</span><span style="color: #000000;">)],</span></div><div><span style="color: #000000;">            </span><span style="color: #001080;">width:</span><span style="color: #000000;"> </span><span style="color: #267f99;">Math</span><span style="color: #000000;">.</span><span style="color: #795e26;">floor</span><span style="color: #000000;">(</span><span style="color: #267f99;">Math</span><span style="color: #000000;">.</span><span style="color: #795e26;">random</span><span style="color: #000000;">() </span><span style="color: #000000;">*</span><span style="color: #000000;"> </span><span style="color: #09885a;">50</span><span style="color: #000000;">) </span><span style="color: #000000;">+</span><span style="color: #000000;"> </span><span style="color: #09885a;">25</span><span style="color: #000000;">,</span></div><div><span style="color: #000000;">            </span><span style="color: #001080;">height:</span><span style="color: #000000;"> </span><span style="color: #267f99;">Math</span><span style="color: #000000;">.</span><span style="color: #795e26;">floor</span><span style="color: #000000;">(</span><span style="color: #267f99;">Math</span><span style="color: #000000;">.</span><span style="color: #795e26;">random</span><span style="color: #000000;">() </span><span style="color: #000000;">*</span><span style="color: #000000;"> </span><span style="color: #09885a;">50</span><span style="color: #000000;">) </span><span style="color: #000000;">+</span><span style="color: #000000;"> </span><span style="color: #09885a;">25</span><span style="color: #000000;">,</span></div><div><span style="color: #000000;">        }));</span></div><div><span style="color: #000000;">    };</span></div><br><div><span style="color: #000000;">    </span><span style="color: #795e26;">render</span><span style="color: #000000;">() {</span></div><div><span style="color: #000000;">        </span><span style="color: #0000ff;">const</span><span style="color: #000000;"> {</span><span style="color: #001080;">color</span><span style="color: #000000;">, </span><span style="color: #001080;">width</span><span style="color: #000000;">, </span><span style="color: #001080;">height</span><span style="color: #000000;">} </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000ff;">this</span><span style="color: #000000;">.</span><span style="color: #001080;">state</span><span style="color: #000000;">;</span></div><div><span style="color: #000000;">        </span><span style="color: #0000ff;">const</span><span style="color: #000000;"> {</span><span style="color: #001080;">children</span><span style="color: #000000;">} </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000ff;">this</span><span style="color: #000000;">.</span><span style="color: #001080;">props</span><span style="color: #000000;">;</span></div><div><span style="color: #000000;">        </span><span style="color: #af00db;">return</span><span style="color: #000000;"> (</span></div><div><span style="color: #000000;">            </span><span style="color: #800000;">&lt;div</span><span style="color: #000000;"> </span><span style="color: #ff0000;">onClick</span><span style="color: #000000;">=</span><span style="color: #000000;">{</span><span style="color: #0000ff;">this</span><span style="color: #000000;">.</span><span style="color: #001080;">randomizePattern</span><span style="color: #000000;">}</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #000000;">                {</span><span style="color: #795e26;">children</span><span style="color: #000000;">({</span><span style="color: #001080;">color</span><span style="color: #000000;">, </span><span style="color: #001080;">width</span><span style="color: #000000;">, </span><span style="color: #001080;">height</span><span style="color: #000000;">})}</span></div><div><span style="color: #000000;">            </span><span style="color: #800000;">&lt;/div&gt;</span></div><div><span style="color: #000000;">        )</span></div><div><span style="color: #000000;">    }</span></div><div><span style="color: #000000;">}</span></div><br></div>
+export class DynamicTestPattern extends PureComponent {
+
+    state = {
+        color: colors[0],
+        width: 50,
+        height: 60
+    };
+
+    randomizePattern = () => {
+        this.setState(() => ({
+            color: colors[Math.floor(Math.random() * colors.length)],
+            width: Math.floor(Math.random() * 50) + 25,
+            height: Math.floor(Math.random() * 50) + 25,
+        }));
+    };
+
+    render() {
+        const {color, width, height} = this.state;
+        const {children} = this.props;
+        return (
+            <div onClick={this.randomizePattern}>
+                {children({color, width, height})}
+            </div>
+        )
+    }
+}
 `;
 
 export class DynamicTestPatternSlide extends PureComponent {
     render() {
-        const viewProps = {
-            sourceCodeOne,
-            sourceCodeTwo,
+        const panelProps = {
+            panelOne: () => <CodeView sourceCode={sourceCodeOne} language="javascript" />,
+            panelTwo: () => <CodeView sourceCode={sourceCodeTwo} language="javascript" />,
         };
         return (
-            <SideBySideSourceCode {...viewProps} />
+            <FillView>
+                <TwoPanel {...panelProps} />
+            </FillView>
         )
     }
 }

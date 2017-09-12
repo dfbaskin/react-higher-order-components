@@ -1,16 +1,37 @@
 import React, {PureComponent} from "react";
-import {SourceCode} from "../shared/source-code";
+import {FillView} from "../shared/fill-view";
+import {CodeView} from "../shared/code-view";
 
 const sourceCode = `
-<div style="color: #000000;background-color: #ffffff;font-family: Consolas, 'Courier New', monospace;font-weight: normal;font-size: 14px;line-height: 19px;white-space: pre;"><div><span style="color: #af00db;">import</span><span style="color: #000000;"> </span><span style="color: #001080;">React</span><span style="color: #000000;">, {</span><span style="color: #001080;">PureComponent</span><span style="color: #000000;">} </span><span style="color: #af00db;">from</span><span style="color: #000000;"> </span><span style="color: #a31515;">"react"</span><span style="color: #000000;">;</span></div><br><div><span style="color: #af00db;">export</span><span style="color: #000000;"> </span><span style="color: #0000ff;">class</span><span style="color: #000000;"> </span><span style="color: #267f99;">Simple</span><span style="color: #000000;"> </span><span style="color: #0000ff;">extends</span><span style="color: #000000;"> </span><span style="color: #267f99;">PureComponent</span><span style="color: #000000;"> {</span></div><br><div><span style="color: #000000;">    </span><span style="color: #001080;">state</span><span style="color: #000000;"> </span><span style="color: #000000;">=</span><span style="color: #000000;"> {</span></div><div><span style="color: #000000;">        </span><span style="color: #001080;">message:</span><span style="color: #000000;"> </span><span style="color: #a31515;">"Hello!"</span></div><div><span style="color: #000000;">    };</span></div><br><div><span style="color: #000000;">    </span><span style="color: #795e26;">onClick</span><span style="color: #000000;"> </span><span style="color: #000000;">=</span><span style="color: #000000;"> () </span><span style="color: #0000ff;">=&gt;</span><span style="color: #000000;"> {</span></div><div><span style="color: #000000;">        </span><span style="color: #0000ff;">this</span><span style="color: #000000;">.</span><span style="color: #795e26;">setState</span><span style="color: #000000;">(({</span><span style="color: #001080;">message</span><span style="color: #000000;">}) </span><span style="color: #0000ff;">=&gt;</span><span style="color: #000000;"> ({</span></div><div><span style="color: #000000;">            </span><span style="color: #001080;">message:</span><span style="color: #000000;"> </span><span style="color: #001080;">message</span><span style="color: #000000;"> </span><span style="color: #000000;">+</span><span style="color: #000000;"> </span><span style="color: #a31515;">" [Clicked]"</span></div><div><span style="color: #000000;">        }));</span></div><div><span style="color: #000000;">    };</span></div><br><div><span style="color: #000000;">    </span><span style="color: #795e26;">render</span><span style="color: #000000;">() {</span></div><div><span style="color: #000000;">        </span><span style="color: #0000ff;">const</span><span style="color: #000000;"> {</span><span style="color: #001080;">message</span><span style="color: #000000;">} </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000ff;">this</span><span style="color: #000000;">.</span><span style="color: #001080;">state</span><span style="color: #000000;">;</span></div><div><span style="color: #000000;">        </span><span style="color: #af00db;">return</span><span style="color: #000000;"> (</span></div><div><span style="color: #000000;">            </span><span style="color: #800000;">&lt;div</span><span style="color: #000000;"> </span><span style="color: #ff0000;">onClick</span><span style="color: #000000;">=</span><span style="color: #000000;">{</span><span style="color: #0000ff;">this</span><span style="color: #000000;">.</span><span style="color: #001080;">onClick</span><span style="color: #000000;">}</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #000000;">                {</span><span style="color: #001080;">message</span><span style="color: #000000;">}</span></div><div><span style="color: #000000;">            </span><span style="color: #800000;">&lt;/div&gt;</span></div><div><span style="color: #000000;">        )</span></div><div><span style="color: #000000;">    }</span></div><div><span style="color: #000000;">}</span></div><br></div>
+export class Simple extends PureComponent {
+
+    state = {
+        message: "Hello!"
+    };
+
+    onClick = () => {
+        this.setState(({message}) => ({
+            message: message + " [Clicked]"
+        }));
+    };
+
+    render() {
+        const {message} = this.state;
+        return (
+            <div onClick={this.onClick}>
+                {message}
+            </div>
+        )
+    }
+}
 `;
 
 export class ReactStatefulComponentSlide extends PureComponent {
     render() {
         return (
-            <div>
-                <SourceCode sourceCode={sourceCode} scale={1.6} />
-            </div>
+            <FillView>
+                <CodeView sourceCode={sourceCode} language="javascript" />
+            </FillView>
         )
     }
 }

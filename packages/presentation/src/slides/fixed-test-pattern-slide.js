@@ -1,22 +1,68 @@
 import React, {PureComponent} from "react";
-import {SideBySideSourceCode} from "../shared/side-by-side-source-code";
+import {FillView} from "../shared/fill-view";
+import {TwoPanel} from "../shared/two-panel";
+import {CodeView} from "../shared/code-view";
 
 const sourceCodeOne = `
-<div style="color: #000000;background-color: #ffffff;font-family: Consolas, 'Courier New', monospace;font-weight: normal;font-size: 14px;line-height: 19px;white-space: pre;"><div><span style="color: #af00db;">export</span><span style="color: #000000;"> </span><span style="color: #0000ff;">const</span><span style="color: #000000;"> </span><span style="color: #795e26;">FixedTestPattern</span><span style="color: #000000;"> </span><span style="color: #000000;">=</span><span style="color: #000000;"> (</span><span style="color: #001080;">props</span><span style="color: #000000;">) </span><span style="color: #0000ff;">=&gt;</span><span style="color: #000000;"> {</span></div><div><span style="color: #000000;">    </span><span style="color: #af00db;">return</span><span style="color: #000000;"> (</span></div><div><span style="color: #000000;">        </span><span style="color: #800000;">&lt;</span><span style="color: #267f99;">TestPattern</span><span style="color: #000000;"> </span><span style="color: #ff0000;">color</span><span style="color: #000000;">=</span><span style="color: #a31515;">"red"</span><span style="color: #000000;"> </span><span style="color: #ff0000;">width</span><span style="color: #000000;">=</span><span style="color: #a31515;">"50vw"</span><span style="color: #000000;"> </span><span style="color: #ff0000;">height</span><span style="color: #000000;">=</span><span style="color: #a31515;">"60vh"</span><span style="color: #000000;"> </span><span style="color: #800000;">/&gt;</span></div><div><span style="color: #000000;">    )</span></div><div><span style="color: #000000;">};</span></div><br></div>
+export const FixedTestPattern = (props) => {
+    return (
+        <TestPattern
+            color="red"
+            width="50vw"
+            height="60vh"
+        />
+    )
+};
 `;
 
 const sourceCodeTwo = `
-<div style="color: #000000;background-color: #ffffff;font-family: Consolas, 'Courier New', monospace;font-weight: normal;font-size: 14px;line-height: 19px;white-space: pre;"><div><span style="color: #af00db;">export</span><span style="color: #000000;"> </span><span style="color: #0000ff;">const</span><span style="color: #000000;"> </span><span style="color: #795e26;">TestPattern</span><span style="color: #000000;"> </span><span style="color: #000000;">=</span><span style="color: #000000;"> (</span><span style="color: #001080;">props</span><span style="color: #000000;">) </span><span style="color: #0000ff;">=&gt;</span><span style="color: #000000;"> {</span></div><div><span style="color: #000000;">    </span><span style="color: #0000ff;">let</span><span style="color: #000000;"> {</span><span style="color: #001080;">color</span><span style="color: #000000;">, </span><span style="color: #001080;">width</span><span style="color: #000000;">, </span><span style="color: #001080;">height</span><span style="color: #000000;">} </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #001080;">props</span><span style="color: #000000;">;</span></div><div><span style="color: #000000;">    </span><span style="color: #0000ff;">let</span><span style="color: #000000;"> </span><span style="color: #001080;">svgStyles</span><span style="color: #000000;"> </span><span style="color: #000000;">=</span><span style="color: #000000;"> {</span></div><div><span style="color: #000000;">        </span><span style="color: #001080;">width</span><span style="color: #000000;">,</span></div><div><span style="color: #000000;">        </span><span style="color: #001080;">height</span></div><div><span style="color: #000000;">    };</span></div><div><span style="color: #000000;">    </span><span style="color: #af00db;">return</span><span style="color: #000000;"> (</span></div><div><span style="color: #000000;">        </span><span style="color: #800000;">&lt;svg</span><span style="color: #000000;"> </span><span style="color: #ff0000;">style</span><span style="color: #000000;">=</span><span style="color: #000000;">{</span><span style="color: #001080;">svgStyles</span><span style="color: #000000;">} </span><span style="color: #ff0000;">viewBox</span><span style="color: #000000;">=</span><span style="color: #a31515;">"0 0 100 100"</span><span style="color: #000000;"> </span><span style="color: #ff0000;">preserveAspectRatio</span><span style="color: #000000;">=</span><span style="color: #a31515;">"none"</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #000000;">            </span><span style="color: #800000;">&lt;path</span></div><div><span style="color: #000000;">                </span><span style="color: #ff0000;">d</span><span style="color: #000000;">=</span><span style="color: #a31515;">"M 50,50 m -50,0 a 50,50 0 1,1 100,0 a 50,50 0 1,1 -100,0"</span></div><div><span style="color: #000000;">                </span><span style="color: #ff0000;">stroke</span><span style="color: #000000;">=</span><span style="color: #000000;">{</span><span style="color: #001080;">color</span><span style="color: #000000;">}</span></div><div><span style="color: #000000;">                </span><span style="color: #ff0000;">strokeWidth</span><span style="color: #000000;">=</span><span style="color: #a31515;">"1px"</span></div><div><span style="color: #000000;">                </span><span style="color: #ff0000;">fill</span><span style="color: #000000;">=</span><span style="color: #a31515;">"none"</span></div><div><span style="color: #000000;">            </span><span style="color: #800000;">/&gt;</span></div><div><span style="color: #000000;">            </span><span style="color: #800000;">&lt;path</span></div><div><span style="color: #000000;">                </span><span style="color: #ff0000;">d</span><span style="color: #000000;">=</span><span style="color: #a31515;">"M 0,0 l 100,100"</span></div><div><span style="color: #000000;">                </span><span style="color: #ff0000;">stroke</span><span style="color: #000000;">=</span><span style="color: #000000;">{</span><span style="color: #001080;">color</span><span style="color: #000000;">}</span></div><div><span style="color: #000000;">                </span><span style="color: #ff0000;">strokeWidth</span><span style="color: #000000;">=</span><span style="color: #a31515;">"1px"</span></div><div><span style="color: #000000;">                </span><span style="color: #ff0000;">fill</span><span style="color: #000000;">=</span><span style="color: #a31515;">"none"</span></div><div><span style="color: #000000;">            </span><span style="color: #800000;">/&gt;</span></div><div><span style="color: #000000;">            </span><span style="color: #800000;">&lt;path</span></div><div><span style="color: #000000;">                </span><span style="color: #ff0000;">d</span><span style="color: #000000;">=</span><span style="color: #a31515;">"M 100,0 l -100,100"</span></div><div><span style="color: #000000;">                </span><span style="color: #ff0000;">stroke</span><span style="color: #000000;">=</span><span style="color: #000000;">{</span><span style="color: #001080;">color</span><span style="color: #000000;">}</span></div><div><span style="color: #000000;">                </span><span style="color: #ff0000;">strokeWidth</span><span style="color: #000000;">=</span><span style="color: #a31515;">"1px"</span></div><div><span style="color: #000000;">                </span><span style="color: #ff0000;">fill</span><span style="color: #000000;">=</span><span style="color: #a31515;">"none"</span></div><div><span style="color: #000000;">            </span><span style="color: #800000;">/&gt;</span></div><div><span style="color: #000000;">            </span><span style="color: #800000;">&lt;path</span></div><div><span style="color: #000000;">                </span><span style="color: #ff0000;">d</span><span style="color: #000000;">=</span><span style="color: #a31515;">"M 0,0 l 0,100 l 100,0 l 0,-100 l -100,0"</span></div><div><span style="color: #000000;">                </span><span style="color: #ff0000;">stroke</span><span style="color: #000000;">=</span><span style="color: #000000;">{</span><span style="color: #001080;">color</span><span style="color: #000000;">}</span></div><div><span style="color: #000000;">                </span><span style="color: #ff0000;">strokeWidth</span><span style="color: #000000;">=</span><span style="color: #a31515;">"1px"</span></div><div><span style="color: #000000;">                </span><span style="color: #ff0000;">fill</span><span style="color: #000000;">=</span><span style="color: #a31515;">"none"</span></div><div><span style="color: #000000;">            </span><span style="color: #800000;">/&gt;</span></div><div><span style="color: #000000;">        </span><span style="color: #800000;">&lt;/svg&gt;</span></div><div><span style="color: #000000;">    )</span></div><div><span style="color: #000000;">};</span></div><br></div>
+export const TestPattern = (props) => {
+    let {color, width, height} = props;
+    let svgStyles = {
+        width,
+        height
+    };
+    return (
+        <svg style={svgStyles} viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path
+                d="M 50,50 m -50,0 a 50,50 0 1,1 100,0 a 50,50 0 1,1 -100,0"
+                stroke={color}
+                strokeWidth="1px"
+                fill="none"
+            />
+            <path
+                d="M 0,0 l 100,100"
+                stroke={color}
+                strokeWidth="1px"
+                fill="none"
+            />
+            <path
+                d="M 100,0 l -100,100"
+                stroke={color}
+                strokeWidth="1px"
+                fill="none"
+            />
+            <path
+                d="M 0,0 l 0,100 l 100,0 l 0,-100 l -100,0"
+                stroke={color}
+                strokeWidth="1px"
+                fill="none"
+            />
+        </svg>
+    )
+};
 `;
 
 export class FixedTestPatternSlide extends PureComponent {
     render() {
-        const viewProps = {
-            sourceCodeOne,
-            sourceCodeTwo,
+        const panelProps = {
+            panelOne: () => <CodeView sourceCode={sourceCodeOne} language="javascript" />,
+            panelTwo: () => <CodeView sourceCode={sourceCodeTwo} language="javascript" />,
         };
         return (
-            <SideBySideSourceCode {...viewProps} />
+            <FillView>
+                <TwoPanel {...panelProps} />
+            </FillView>
         )
     }
 }

@@ -1,22 +1,54 @@
 import React, {PureComponent} from "react";
-import {SideBySideSourceCode} from "../shared/side-by-side-source-code";
+import {FillView} from "../shared/fill-view";
+import {TwoPanel} from "../shared/two-panel";
+import {CodeView} from "../shared/code-view";
 
 const sourceCodeOne = `
-<div style="color: #000000;background-color: #ffffff;font-family: Consolas, 'Courier New', monospace;font-weight: normal;font-size: 14px;line-height: 19px;white-space: pre;"><div><span style="color: #af00db;">export</span><span style="color: #000000;"> </span><span style="color: #0000ff;">class</span><span style="color: #000000;"> </span><span style="color: #267f99;">ObjectPropsParent</span><span style="color: #000000;"> </span><span style="color: #0000ff;">extends</span><span style="color: #000000;"> </span><span style="color: #267f99;">PureComponent</span><span style="color: #000000;"> {</span></div><br><div><span style="color: #000000;">    </span><span style="color: #001080;">state</span><span style="color: #000000;"> </span><span style="color: #000000;">=</span><span style="color: #000000;"> {</span></div><div><span style="color: #000000;">        </span><span style="color: #001080;">item:</span><span style="color: #000000;"> {</span></div><div><span style="color: #000000;">            </span><span style="color: #001080;">message:</span><span style="color: #000000;"> </span><span style="color: #a31515;">"Welcome!"</span><span style="color: #000000;">,</span></div><div><span style="color: #000000;">            </span><span style="color: #001080;">currentTemp:</span><span style="color: #000000;"> </span><span style="color: #09885a;">74</span><span style="color: #000000;">,</span></div><div><span style="color: #000000;">        }</span></div><div><span style="color: #000000;">    };</span></div><br><div><span style="color: #000000;">    </span><span style="color: #795e26;">render</span><span style="color: #000000;">() {</span></div><div><span style="color: #000000;">        </span><span style="color: #0000ff;">const</span><span style="color: #000000;"> {</span><span style="color: #001080;">item</span><span style="color: #000000;">} </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #0000ff;">this</span><span style="color: #000000;">.</span><span style="color: #001080;">state</span><span style="color: #000000;">;</span></div><div><span style="color: #000000;">        </span><span style="color: #af00db;">return</span><span style="color: #000000;"> (</span></div><div><span style="color: #000000;">            </span><span style="color: #800000;">&lt;</span><span style="color: #267f99;">ObjectProps</span></div><div><span style="color: #000000;">                </span><span style="color: #ff0000;">item</span><span style="color: #000000;">=</span><span style="color: #000000;">{</span><span style="color: #001080;">item</span><span style="color: #000000;">}</span></div><div><span style="color: #000000;">            </span><span style="color: #800000;">/&gt;</span></div><div><span style="color: #000000;">        )</span></div><div><span style="color: #000000;">    }</span></div><div><span style="color: #000000;">}</span></div><br></div>
+export class ObjectPropsParent extends PureComponent {
+
+    state = {
+        item: {
+            message: "Welcome!",
+            currentTemp: 74,
+        }
+    };
+
+    render() {
+        const {item} = this.state;
+        return (
+            <ObjectProps
+                item={item}
+            />
+        )
+    }
+}
 `;
 
 const sourceCodeTwo = `
-<div style="color: #000000;background-color: #ffffff;font-family: Consolas, 'Courier New', monospace;font-weight: normal;font-size: 14px;line-height: 19px;white-space: pre;"><div><span style="color: #af00db;">export</span><span style="color: #000000;"> </span><span style="color: #0000ff;">const</span><span style="color: #000000;"> </span><span style="color: #795e26;">ObjectProps</span><span style="color: #000000;"> </span><span style="color: #000000;">=</span><span style="color: #000000;"> (</span><span style="color: #001080;">props</span><span style="color: #000000;">) </span><span style="color: #0000ff;">=&gt;</span><span style="color: #000000;"> {</span></div><div><span style="color: #000000;">    </span><span style="color: #0000ff;">const</span><span style="color: #000000;"> {</span><span style="color: #001080;">message</span><span style="color: #000000;">, </span><span style="color: #001080;">currentTemp</span><span style="color: #000000;">} </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #001080;">props</span><span style="color: #000000;">.</span><span style="color: #001080;">item</span><span style="color: #000000;">;</span></div><div><span style="color: #000000;">    </span><span style="color: #af00db;">return</span><span style="color: #000000;"> (</span></div><div><span style="color: #000000;">        </span><span style="color: #800000;">&lt;div&gt;</span></div><div><span style="color: #000000;">            </span><span style="color: #800000;">&lt;p&gt;</span><span style="color: #000000;">{</span><span style="color: #001080;">message</span><span style="color: #000000;">}</span><span style="color: #800000;">&lt;/p&gt;</span></div><div><span style="color: #000000;">            </span><span style="color: #800000;">&lt;p&gt;</span><span style="color: #000000;">Current Temperature is {</span><span style="color: #001080;">currentTemp</span><span style="color: #000000;">}&amp;#176; F</span><span style="color: #800000;">&lt;/p&gt;</span></div><div><span style="color: #000000;">        </span><span style="color: #800000;">&lt;/div&gt;</span></div><div><span style="color: #000000;">    )</span></div><div><span style="color: #000000;">};</span></div><br></div>
+export const ObjectProps = (props) => {
+    const {message, currentTemp} = props.item;
+    return (
+        <div>
+            <p>{message}</p>
+            <p>
+                Current Temperature is
+                {currentTemp}&#176; F
+            </p>
+        </div>
+    )
+};
 `;
 
 export class ObjectPropsSlide extends PureComponent {
     render() {
-        const viewProps = {
-            sourceCodeOne,
-            sourceCodeTwo,
+        const panelProps = {
+            panelOne: () => <CodeView sourceCode={sourceCodeOne} language="javascript" />,
+            panelTwo: () => <CodeView sourceCode={sourceCodeTwo} language="javascript" />,
         };
         return (
-            <SideBySideSourceCode {...viewProps} />
+            <FillView>
+                <TwoPanel {...panelProps} />
+            </FillView>
         )
     }
 }

@@ -1,22 +1,62 @@
 import React, {PureComponent} from "react";
-import {SideBySideSourceCode} from "../shared/side-by-side-source-code";
+import {FillView} from "../shared/fill-view";
+import {TwoPanel} from "../shared/two-panel";
+import {CodeView} from "../shared/code-view";
 
 const sourceCodeOne = `
-<div style="color: #000000;background-color: #ffffff;font-family: Consolas, 'Courier New', monospace;font-weight: normal;font-size: 14px;line-height: 19px;white-space: pre;"><div><span style="color: #af00db;">export</span><span style="color: #000000;"> </span><span style="color: #0000ff;">const</span><span style="color: #000000;"> </span><span style="color: #795e26;">ComposedLayoutParent</span><span style="color: #000000;"> </span><span style="color: #000000;">=</span><span style="color: #000000;"> (</span><span style="color: #001080;">props</span><span style="color: #000000;">) </span><span style="color: #0000ff;">=&gt;</span><span style="color: #000000;"> {</span></div><div><span style="color: #000000;">    </span><span style="color: #af00db;">return</span><span style="color: #000000;"> (</span></div><div><span style="color: #000000;">        </span><span style="color: #800000;">&lt;</span><span style="color: #267f99;">ComposedLayout</span></div><div><span style="color: #000000;">            </span><span style="color: #ff0000;">LeftOne</span><span style="color: #000000;">=</span><span style="color: #000000;">{</span><span style="color: #001080;">ExampleAlpha</span><span style="color: #000000;">}</span></div><div><span style="color: #000000;">            </span><span style="color: #ff0000;">LeftTwo</span><span style="color: #000000;">=</span><span style="color: #000000;">{</span><span style="color: #001080;">ExampleBeta</span><span style="color: #000000;">}</span></div><div><span style="color: #000000;">            </span><span style="color: #ff0000;">LeftThree</span><span style="color: #000000;">=</span><span style="color: #000000;">{</span><span style="color: #001080;">ExampleGamma</span><span style="color: #000000;">}</span></div><div><span style="color: #000000;">            </span><span style="color: #ff0000;">MiddleOne</span><span style="color: #000000;">=</span><span style="color: #000000;">{</span><span style="color: #001080;">ExampleDelta</span><span style="color: #000000;">}</span></div><div><span style="color: #000000;">            </span><span style="color: #ff0000;">MiddleTwo</span><span style="color: #000000;">=</span><span style="color: #000000;">{</span><span style="color: #001080;">ExampleEpsilon</span><span style="color: #000000;">}</span></div><div><span style="color: #000000;">            </span><span style="color: #ff0000;">RightOne</span><span style="color: #000000;">=</span><span style="color: #000000;">{</span><span style="color: #001080;">ExampleZeta</span><span style="color: #000000;">}</span></div><div><span style="color: #000000;">        </span><span style="color: #800000;">/&gt;</span></div><div><span style="color: #000000;">    );</span></div><div><span style="color: #000000;">};</span></div><br></div>
+export const ComposedLayoutParent = (props) => {
+    return (
+        <ComposedLayout
+            LeftOne={ExampleAlpha}
+            LeftTwo={ExampleBeta}
+            LeftThree={ExampleGamma}
+            MiddleOne={ExampleDelta}
+            MiddleTwo={ExampleEpsilon}
+            RightOne={ExampleZeta}
+        />
+    );
+};
 `;
 
 const sourceCodeTwo = `
-<div style="color: #000000;background-color: #ffffff;font-family: Consolas, 'Courier New', monospace;font-weight: normal;font-size: 14px;line-height: 19px;white-space: pre;"><div><span style="color: #af00db;">export</span><span style="color: #000000;"> </span><span style="color: #0000ff;">const</span><span style="color: #000000;"> </span><span style="color: #795e26;">ComposedLayout</span><span style="color: #000000;"> </span><span style="color: #000000;">=</span><span style="color: #000000;"> (</span><span style="color: #001080;">props</span><span style="color: #000000;">) </span><span style="color: #0000ff;">=&gt;</span><span style="color: #000000;"> {</span></div><div><span style="color: #000000;">    </span><span style="color: #0000ff;">const</span><span style="color: #000000;"> {</span></div><div><span style="color: #000000;">        </span><span style="color: #001080;">LeftOne</span><span style="color: #000000;">,</span></div><div><span style="color: #000000;">        </span><span style="color: #001080;">LeftTwo</span><span style="color: #000000;">,</span></div><div><span style="color: #000000;">        </span><span style="color: #001080;">LeftThree</span><span style="color: #000000;">,</span></div><div><span style="color: #000000;">        </span><span style="color: #001080;">MiddleOne</span><span style="color: #000000;">,</span></div><div><span style="color: #000000;">        </span><span style="color: #001080;">MiddleTwo</span><span style="color: #000000;">,</span></div><div><span style="color: #000000;">        </span><span style="color: #001080;">RightOne</span></div><div><span style="color: #000000;">    } </span><span style="color: #000000;">=</span><span style="color: #000000;"> </span><span style="color: #001080;">props</span><span style="color: #000000;">;</span></div><div><span style="color: #000000;">    </span><span style="color: #af00db;">return</span><span style="color: #000000;"> (</span></div><div><span style="color: #000000;">        </span><span style="color: #800000;">&lt;div</span><span style="color: #000000;"> </span><span style="color: #ff0000;">className</span><span style="color: #000000;">=</span><span style="color: #a31515;">"layout"</span><span style="color: #800000;">&gt;</span></div><div><span style="color: #000000;">            </span><span style="color: #800000;">&lt;div&gt;</span></div><div><span style="color: #000000;">                { </span><span style="color: #001080;">LeftOne</span><span style="color: #000000;"> </span><span style="color: #000000;">&amp;&amp;</span><span style="color: #000000;"> </span><span style="color: #800000;">&lt;</span><span style="color: #267f99;">LeftOne</span><span style="color: #000000;"> </span><span style="color: #ff0000;">message</span><span style="color: #000000;">=</span><span style="color: #a31515;">"Left #1"</span><span style="color: #000000;"> </span><span style="color: #800000;">/&gt;</span><span style="color: #000000;"> }</span></div><div><span style="color: #000000;">                { </span><span style="color: #001080;">LeftTwo</span><span style="color: #000000;"> </span><span style="color: #000000;">&amp;&amp;</span><span style="color: #000000;"> </span><span style="color: #800000;">&lt;</span><span style="color: #267f99;">LeftTwo</span><span style="color: #000000;"> </span><span style="color: #ff0000;">message</span><span style="color: #000000;">=</span><span style="color: #a31515;">"Left #2"</span><span style="color: #000000;"> </span><span style="color: #800000;">/&gt;</span><span style="color: #000000;"> }</span></div><div><span style="color: #000000;">                { </span><span style="color: #001080;">LeftThree</span><span style="color: #000000;"> </span><span style="color: #000000;">&amp;&amp;</span><span style="color: #000000;"> </span><span style="color: #800000;">&lt;</span><span style="color: #267f99;">LeftThree</span><span style="color: #000000;"> </span><span style="color: #ff0000;">message</span><span style="color: #000000;">=</span><span style="color: #a31515;">"Left #3"</span><span style="color: #000000;"> </span><span style="color: #800000;">/&gt;</span><span style="color: #000000;"> }</span></div><div><span style="color: #000000;">            </span><span style="color: #800000;">&lt;/div&gt;</span></div><div><span style="color: #000000;">            </span><span style="color: #800000;">&lt;div&gt;</span></div><div><span style="color: #000000;">                { </span><span style="color: #001080;">MiddleOne</span><span style="color: #000000;"> </span><span style="color: #000000;">&amp;&amp;</span><span style="color: #000000;"> </span><span style="color: #800000;">&lt;</span><span style="color: #267f99;">MiddleOne</span><span style="color: #000000;"> </span><span style="color: #ff0000;">message</span><span style="color: #000000;">=</span><span style="color: #a31515;">"Middle #1"</span><span style="color: #000000;"> </span><span style="color: #800000;">/&gt;</span><span style="color: #000000;"> }</span></div><div><span style="color: #000000;">                { </span><span style="color: #001080;">MiddleTwo</span><span style="color: #000000;"> </span><span style="color: #000000;">&amp;&amp;</span><span style="color: #000000;"> </span><span style="color: #800000;">&lt;</span><span style="color: #267f99;">MiddleTwo</span><span style="color: #000000;"> </span><span style="color: #ff0000;">message</span><span style="color: #000000;">=</span><span style="color: #a31515;">"Middle #2"</span><span style="color: #000000;"> </span><span style="color: #800000;">/&gt;</span><span style="color: #000000;"> }</span></div><div><span style="color: #000000;">            </span><span style="color: #800000;">&lt;/div&gt;</span></div><div><span style="color: #000000;">            </span><span style="color: #800000;">&lt;div&gt;</span></div><div><span style="color: #000000;">                { </span><span style="color: #001080;">RightOne</span><span style="color: #000000;"> </span><span style="color: #000000;">&amp;&amp;</span><span style="color: #000000;"> </span><span style="color: #800000;">&lt;</span><span style="color: #267f99;">RightOne</span><span style="color: #000000;"> </span><span style="color: #ff0000;">message</span><span style="color: #000000;">=</span><span style="color: #a31515;">"Left #1"</span><span style="color: #000000;"> </span><span style="color: #800000;">/&gt;</span><span style="color: #000000;"> }</span></div><div><span style="color: #000000;">            </span><span style="color: #800000;">&lt;/div&gt;</span></div><div><span style="color: #000000;">        </span><span style="color: #800000;">&lt;/div&gt;</span></div><div><span style="color: #000000;">    );</span></div><div><span style="color: #000000;">};</span></div><br></div>
+export const ComposedLayout = (props) => {
+    const {
+        LeftOne,
+        LeftTwo,
+        LeftThree,
+        MiddleOne,
+        MiddleTwo,
+        RightOne
+    } = props;
+    return (
+        <div className="layout">
+            <div>
+                { LeftOne && <LeftOne message="Left #1" /> }
+                { LeftTwo && <LeftTwo message="Left #2" /> }
+                { LeftThree && <LeftThree message="Left #3" /> }
+            </div>
+            <div>
+                { MiddleOne && <MiddleOne message="Middle #1" /> }
+                { MiddleTwo && <MiddleTwo message="Middle #2" /> }
+            </div>
+            <div>
+                { RightOne && <RightOne message="Left #1" /> }
+            </div>
+        </div>
+    );
+};
 `;
 
 export class ComposedLayoutSlide extends PureComponent {
     render() {
-        const viewProps = {
-            sourceCodeOne,
-            sourceCodeTwo,
+        const panelProps = {
+            panelOne: () => <CodeView sourceCode={sourceCodeOne} language="javascript" />,
+            panelTwo: () => <CodeView sourceCode={sourceCodeTwo} language="javascript" />,
         };
         return (
-            <SideBySideSourceCode {...viewProps} />
+            <FillView>
+                <TwoPanel {...panelProps} />
+            </FillView>
         )
     }
 }

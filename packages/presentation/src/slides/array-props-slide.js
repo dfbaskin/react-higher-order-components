@@ -43,13 +43,12 @@ export const ArrayProps = (props) => {
 
 export class ArrayPropsSlide extends PureComponent {
     render() {
-        const panelProps = {
-            panelOne: () => <CodeView sourceCode={sourceCodeOne} language="javascript" />,
-            panelTwo: () => <CodeView sourceCode={sourceCodeTwo} language="javascript" />,
-        };
         return (
             <FillView>
-                <TwoPanel {...panelProps} />
+                <TwoPanel>
+                    <CodeView sourceCode={sourceCodeOne} language="javascript" />
+                    <CodeView sourceCode={sourceCodeTwo} language="javascript" />
+                </TwoPanel>
             </FillView>
         )
     }

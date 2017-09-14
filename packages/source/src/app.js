@@ -52,6 +52,11 @@ const routes = [
         desc: "Fixed Test Pattern"
     },
     {
+        path: "/test-pattern-layout",
+        component: examples.TestPatternLayout,
+        desc: "Test Pattern in Layout"
+    },
+    {
         path: "/dynamic-test-pattern",
         component: examples.DynamicTestPatternParent,
         desc: "Dynamic Test Pattern"

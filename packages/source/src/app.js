@@ -72,6 +72,11 @@ const routes = [
         desc: "Test Pattern HOC"
     },
     {
+        path: "/rectangles-hoc",
+        component: examples.DynamicRectanglesComposed,
+        desc: "Rectangles HOC"
+    },
+    {
         path: "/i18n",
         component: examples.InternationalizationProvider,
         desc: "i18n"

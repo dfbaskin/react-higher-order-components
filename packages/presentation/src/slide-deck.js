@@ -30,6 +30,7 @@ export class SlideDeckComponent extends PureComponent {
         { path: '/wrapped-with-hoc', component: slides.WrappedWithHocSlide },
         { path: '/test-pattern-hoc', component: slides.TestPatternHocSlide },
         { path: '/test-pattern-hoc-usage', component: slides.TestPatternHocUsageSlide },
+        { path: '/rectangles-hoc-usage', component: slides.RectanglesHocUsageSlide },
         { path: '/examples', component: slides.HocExamplesSlide },
         { path: '/example-react-i18next', component: slides.ReactI18NTitleSlide },
         { path: '/i18next-en-json', component: slides.I18NEnJsonSlide },

@@ -22,6 +22,7 @@ export {SimpleHocSlide} from './simple-hoc-slide';
 export {WrappedWithHocSlide} from './wrapped-with-hoc-slide';
 export {TestPatternHocSlide} from './test-pattern-hoc-slide';
 export {TestPatternHocUsageSlide} from './test-pattern-hoc-usage-slide';
+export {RectanglesHocUsageSlide} from './rectangles-hoc-usage-slide';
 export {HocExamplesSlide} from './hoc-examples-slide';
 export {ReactI18NTitleSlide} from './react-i18next-title-slide';
 export {I18NEnJsonSlide} from './i18next-en-json-slide';

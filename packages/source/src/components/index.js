@@ -17,4 +17,5 @@ export {DynamicTestPatternComposed} from './higher-order-components/dynamic-test
 export {DynamicRectanglesComposed} from './higher-order-components/dynamic-rectangles';
 export {InternationalizationProvider} from './i18next/i18next-provider';
 export {PantryApp} from './pantry/pantry-app';
+export {WithHocsExampleParent} from './with-hocs/with-hocs-example-parent';
 export {WithoutHocsExample} from './without-hocs/without-hocs-example';

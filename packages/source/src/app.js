@@ -91,6 +91,11 @@ const routes = [
         component: examples.WithoutHocsExample,
         desc: "Without HOCs"
     },
+    {
+        path: "/with-hocs",
+        component: examples.WithHocsExampleParent,
+        desc: "With HOCs"
+    },
 ];
 
 export const App = (props) => {

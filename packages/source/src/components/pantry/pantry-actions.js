@@ -60,7 +60,8 @@ const initialState = {
     pantry: {},
     account: [
         { credit: 100.0, debit: 0, balance: 100.0 }
-    ]
+    ],
+    mouseMessage: "Hello World!!"
 };
 
 
@@ -158,5 +159,12 @@ export const currentPantryAccountSelector = createSelector(
     currentPantryState,
     ({account}) => ({
         account
+    })
+);
+
+export const mouseMessageSelector = createSelector(
+    currentPantryState,
+    ({mouseMessage}) => ({
+        message: mouseMessage
     })
 );

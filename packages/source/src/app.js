@@ -86,6 +86,11 @@ const routes = [
         component: examples.PantryApp,
         desc: "Pantry App"
     },
+    {
+        path: "/without-hocs",
+        component: examples.WithoutHocsExample,
+        desc: "Without HOCs"
+    },
 ];
 
 export const App = (props) => {

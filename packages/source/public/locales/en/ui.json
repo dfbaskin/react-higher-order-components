@@ -1,5 +1,6 @@
 {
   "hello": "Hello there!",
   "dateValue": "Date: {{dateValue, default}}",
-  "amountValue": "Value: {{amountValue, default}}"
+  "amountValue": "Value: {{amountValue, default}}",
+  "mousePos": "The mouse position is ({{x, default}}, {{y, default}})"
 }

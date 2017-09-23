@@ -18,4 +18,4 @@ export {DynamicRectanglesComposed} from './higher-order-components/dynamic-recta
 export {InternationalizationProvider} from './i18next/i18next-provider';
 export {PantryApp} from './pantry/pantry-app';
 export {WithHocsExampleParent} from './with-hocs/with-hocs-example-parent';
-export {WithoutHocsExample} from './without-hocs/without-hocs-example';
+export {WithoutHocsExampleParent} from './without-hocs/without-hocs-example-parent';

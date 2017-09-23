@@ -88,7 +88,7 @@ const routes = [
     },
     {
         path: "/without-hocs",
-        component: examples.WithoutHocsExample,
+        component: examples.WithoutHocsExampleParent,
         desc: "Without HOCs"
     },
     {
